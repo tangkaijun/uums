@@ -52,6 +52,10 @@ public class UserController extends BaseController<User,Long> {
     @RequestMapping(value="/getById/{id}",method = RequestMethod.GET)
     @Override
     public User getById(@PathVariable("id") Long id) {
-        return null;
+        User user = new User();
+        user.setUsername("zhangsan");
+        user.setEmail("huacloud@qq.com");
+        user.setPhone("18838377374");
+        return user;
     }
 }

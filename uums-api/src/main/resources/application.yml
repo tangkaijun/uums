@@ -39,12 +39,15 @@ spring:
 security:
     oauth2:
       client:
-        client-id: aaaaaa
-        client-secret: bbbbbbbb
-        access-token-uri: http://openapi.baidu.com/oauth/2.0/token
-        user-authorization-uri: http://openapi.baidu.com/oauth/2.0/authorize
+        client-id: client
+        client-secret: secret
+        access-token-uri: http://localhost:8081/oauth/token
+        user-authorization-uri: http://localhost:8081/oauth/authorize
       resource:
-        user-info-uri: https://openapi.baidu.com/rest/2.0/passport/users/getInfo
+        user-info-uri: http://localhost:8081/oauth/check_token
+basic:
+    enabled: false
+    enable-csrf: false
 #mybatis:
   #configuration:
  # lazy-loading-enabled: true
