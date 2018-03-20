@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kjtang.uums.core.dao.AreaMapper">
+
+    <insert id="insert" parameterType="com.kjtang.uums.core.entity.Area">
+        insert into t_user(username,password,gender,email,phone,createTime,modifyTime) values(
+          #{username},#{password},#{gender},#{email},#{phone},now(),now())
+    </insert>
+
+    <select id="update" parameterType="com.kjtang.uums.core.entity.Area">
+
+    </select>
+
+    <select id="delete" resultType="com.kjtang.uums.core.entity.Area">
+
+    </select>
+
+    <select id="getUserByAccount" parameterType="java.lang.String" resultType="com.kjtang.uums.core.entity.Role">
+        select * from t_user where username = #{account}
+    </select>
+
+</mapper>

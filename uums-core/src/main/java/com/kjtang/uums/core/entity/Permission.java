@@ -1,15 +1,17 @@
 package com.kjtang.uums.core.entity;
 
+import com.kjtang.uums.common.base.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.util.Date;
-
 /**
  * Created by kaijun on 2018/3/17.
  */
+@Data
 @ApiModel("权限实体")
-public class Permission {
+public class Permission extends BaseEntity<Long>{
 
     @ApiModelProperty("权限名称")
     private String name;

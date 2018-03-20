@@ -54,7 +54,7 @@ public class WebResourceSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/login","/userInfo.xhtml");
+        web.ignoring().antMatchers("oauth/login","/login","/userInfo.xhtml");
     }
 
     @Bean
@@ -64,7 +64,7 @@ public class WebResourceSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationFilter.setAuthenticationManager(super.authenticationManagerBean());
         authenticationFilter.setUsernameParameter("username");
         authenticationFilter.setPasswordParameter("password");
-        authenticationFilter.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/login", "POST"));
+        authenticationFilter.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher( "/login","POST"));
         return authenticationFilter;
     }
 

@@ -9,27 +9,28 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * Created by kaijun on 2018/3/17.
+ * Created by kaijun on 2018/3/20.
  */
 @Data
-@ApiModel("部门实体")
-public class Orginization extends BaseEntity<Long>{
+@ApiModel("应用实体")
+public class App extends BaseEntity<Long>{
 
-    @ApiModelProperty("部门名称")
+    @ApiModelProperty("应用名称")
     private String name;
 
-    @ApiModelProperty("部门编码")
-    private String code;
+    @ApiModelProperty("应用编码")
+    private String appId;
 
-    @ApiModelProperty("部门描述")
-    private String description;
+    @ApiModelProperty("密钥")
+    private String secret;
 
-    @ApiModelProperty("父部门Id")
-    private Long pid;
+    @ApiModelProperty("回调地址")
+    private String redirectUri;
 
     @ApiModelProperty("创建时间")
     private Date createTime;
 
     @ApiModelProperty("最后修改时间")
     private Date modifyTime;
+
 }
