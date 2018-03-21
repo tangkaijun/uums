@@ -68,7 +68,7 @@ public class WebResourceSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationFilter.setAuthenticationFailureHandler(new UserAuthenticationFailureHandler());
         authenticationFilter.setUsernameParameter("username");
         authenticationFilter.setPasswordParameter("password");
-        authenticationFilter.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/login", "POST"));
+        authenticationFilter.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher( "/login","POST"));
         return authenticationFilter;
     }
 

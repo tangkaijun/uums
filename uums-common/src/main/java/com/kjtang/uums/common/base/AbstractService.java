@@ -1,14 +1,19 @@
 package com.kjtang.uums.common.base;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by kaijun on 2018/3/17.
+ * 此类中的方法一般都要进行重新才符合实际的需求
  */
 public abstract  class AbstractService<T extends BaseEntity,ID extends Serializable> implements BaseService<T,ID>{
 
+    protected Logger LOGGER = LoggerFactory.getLogger(AbstractService.class);
 
     private BaseMapper<T,ID> baseMapper;
 
@@ -23,6 +28,7 @@ public abstract  class AbstractService<T extends BaseEntity,ID extends Serializa
 
     @Override
     public void update(T entity) {
+        LOGGER.trace("更新方法默认实现");
         baseMapper.update(entity);
     }
 
@@ -36,4 +42,8 @@ public abstract  class AbstractService<T extends BaseEntity,ID extends Serializa
         return baseMapper.getById(id);
     }
 
+    @Override
+    public List<? extends T> getList() {
+        return null;
+    }
 }
