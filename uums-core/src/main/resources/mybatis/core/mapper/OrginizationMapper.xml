@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.kjtang.uums.core.dao.AreaMapper">
+<mapper namespace="com.kjtang.uums.core.dao.OrginizationMapper">
 
-    <insert id="insert" parameterType="com.kjtang.uums.core.entity.Area">
+    <insert id="insert" parameterType="com.kjtang.uums.core.entity.Orginization">
         insert into t_user(username,password,gender,email,phone,createTime,modifyTime) values(
           #{username},#{password},#{gender},#{email},#{phone},now(),now())
     </insert>
